@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Smart To-Do App</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Left Panel -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-list-check"></i>
+            <h2>TaskFlow</h2>
+        </div>
+
+        <div class="clock">
+            <h3 id="liveDate">Loading...</h3>
+            <h1 id="liveClock">00:00:00</h1>
+        </div>
+
+        <div class="progress-card">
+
+            <h3>Today's Progress</h3>
+
+            <div class="progress-circle">
+
+                <svg width="150" height="150">
+
+                    <circle
+                        cx="75"
+                        cy="75"
+                        r="65">
+                    </circle>
+
+                    <circle
+                        id="progressCircle"
+                        cx="75"
+                        cy="75"
+                        r="65">
+                    </circle>
+
+                </svg>
+
+                <div class="progress-text">
+                    <h2 id="progressPercent">0%</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat-box">
+                <h4>Total</h4>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h4>Completed</h4>
+                <p id="completedTasks">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h4>Pending</h4>
+                <p id="pendingTasks">0</p>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Section -->
+
+    <main class="main">
+
+        <header>
+
+            <h1>My Tasks</h1>
+
+            <button id="themeToggle">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </header>
+
+        <!-- Quote -->
+
+        <div class="quote">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <span id="quoteText">
+                Small progress is still progress.
+            </span>
+
+        </div>
+
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+            type="text"
+            id="searchTask"
+            placeholder="Search tasks...">
+
+        </div>
+
+
+        <!-- Add Task -->
+
+        <div class="task-form">
+
+            <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter task...">
+
+            <input
+            type="date"
+            id="taskDate">
+
+            <input
+            type="time"
+            id="taskTime">
+
+            <select id="taskPriority">
+
+                <option value="High">
+                    🔴 High
+                </option>
+
+                <option value="Medium">
+                    🟡 Medium
+                </option>
+
+                <option value="Low">
+                    🟢 Low
+                </option>
+
+            </select>
+
+            <button id="addTask">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Task
+
+            </button>
+
+        </div>
+
+
+        <!-- Filters -->
+
+        <div class="filters">
+
+            <button class="filter active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter" data-filter="pending">
+                Pending
+            </button>
+
+            <button class="filter" data-filter="completed">
+                Completed
+            </button>
+
+        </div>
+
+
+        <!-- Task List -->
+
+        <ul id="taskList">
+
+            <!-- JavaScript will create tasks -->
+
+        </ul>
+
+
+    </main>
+
+</div>
+
+
+<!-- Floating Add Button -->
+
+<button class="floating-btn">
+
+    <i class="fa-solid fa-plus"></i>
+
+</button>
+
+
+<!-- Success Popup -->
+
+<div class="popup" id="popup">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span>Task Completed!</span>
+
+</div>
+
+
+<!-- JS -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
